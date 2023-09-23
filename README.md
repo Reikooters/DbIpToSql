@@ -28,7 +28,7 @@ ALTER DATABASE [DbIpLocation] SET RECOVERY SIMPLE
 GO
 ```
 
-Next, run the SQL script here: [/sql/Database Creation Query.sql](/sql/Database Creation Query.sql)
+Next, run the SQL script here: [/sql/Database Creation Query.sql](/sql/Database%20Creation%20Query.sql)
 
 This creates the following tables:
 
