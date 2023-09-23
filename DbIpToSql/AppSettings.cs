@@ -7,6 +7,12 @@
 
         public void Validate()
         {
+            // RecordsPerUpload
+            if (RecordsPerUpload < 1000)
+            {
+                throw new AppSettingsException("AppSettings.RecordsPerUpload must be an integer greater than or equal to 1000.");
+            }
+
             // ConnectionStrings
             if (string.IsNullOrEmpty(ConnectionStrings?.DbIpLocation))
             {
