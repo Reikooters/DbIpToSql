@@ -1,10 +1,26 @@
 # DbIpToSql
 
-DbIpToSql is a tool written in C# .NET 7 which downloads the latest free-tier IP-to-Location database from https://db-ip.com/ and stores it into a Microsoft SQL Server database.
+DbIpToSql is a tool written in C# .NET 7 which downloads the latest free-tier IP-to-Location database from the [DB-IP website](https://db-ip.com/) and stores it into a Microsoft SQL Server database.
 
 DB-IP is a service which provides a database of IP addresses along with their city/country, which you can use to find the location of an IP address. Their database is updated monthly.
 
 One such use case for an IP-to-Location database in your application could be to notify a user when someone logs into their account from a different country than the one they usually log in from, or in the email body of a 'Forgot Password' request to include the location where the request was made from.
+
+This is not an official application or in any way associated with DB-IP.
+
+## :mage: Database Attribution
+
+Please note as per the [DB-IP licensing terms](https://db-ip.com/db/lite.php) for their free-tier database, they request providing attribution as quoted below.
+
+> Licensing terms
+> 
+> The free DB-IP Lite database by [DB-IP](https://db-ip.com) is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+> 
+> You are free to use this database in your application, provided you give attribution to DB-IP.com for the data.
+> 
+> In the case of a web application, you must include a link back to DB-IP.com on pages that display or use results from the database. You may do it by pasting the HTML code snippet below into your code :
+>
+> `<a href='https://db-ip.com'>IP Geolocation by DB-IP</a>`
 
 ## :books: Installation
 
@@ -62,7 +78,7 @@ As shown above, the configuration has the following two settings:
 
 ## :alarm_clock: Running the application on a schedule
 
-As mentioned earlier, the data is only downloaded if the database on the DB-IP website is newer than the version stored in `tblDataVersion`. This means it is safe to run the application on a schedule to keep the data up to date.
+As mentioned earlier, the data is only downloaded if the database on the DB-IP website is newer than the version stored in the `tblDataVersion` table. This means it is safe to run the application on a schedule to keep the data up to date.
 
 Data is also first inserted into a temporary table during processing. Then, using a transaction, the current `tblIpAddresses` table is dropped, and the temporary table renamed to `tblIpAddresses` to then be used as the live table. This means that applications using the database should not experience any downtime while the update is being processed.
 
