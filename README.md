@@ -1,6 +1,6 @@
 # DbIpToSql
 
-DbIpToSql is a tool written in C# .NET 7 which downloads the latest free-tier IP-to-Location database from the [DB-IP website](https://db-ip.com/) and stores it into a Microsoft SQL Server database.
+DbIpToSql is a tool written in C# .NET 8 which downloads the latest free-tier IP-to-Location database from the [DB-IP website](https://db-ip.com/) and stores it into a Microsoft SQL Server database.
 
 DB-IP is a service which provides a database of IP addresses along with their city/country, which you can use to find the location of an IP address. Their database is updated monthly.
 
