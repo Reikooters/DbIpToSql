@@ -2,7 +2,6 @@
 
 namespace DbIpToSql
 {
-    [Serializable]
     public sealed class AppSettingsException : Exception
     {
         public AppSettingsException()
@@ -16,11 +15,6 @@ namespace DbIpToSql
 
         public AppSettingsException(string message, Exception inner)
             : base(message, inner)
-        {
-        }
-
-        private AppSettingsException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }
