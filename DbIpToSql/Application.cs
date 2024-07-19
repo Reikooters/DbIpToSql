@@ -230,8 +230,8 @@ from tblDataVersion";
 
                     using (Stream responseStream = await response.Content.ReadAsStreamAsync())
                     {
-                        string outputDirectory = $"{Toolbox.GetExecutableDirectory()}/download";
-                        string outputPath = $"{outputDirectory}/{outputFilename}";
+                        string outputDirectory = Path.Combine(Toolbox.GetExecutableDirectory(), "download");
+                        string outputPath = Path.Combine(outputDirectory, outputFilename);
 
                         Directory.CreateDirectory(outputDirectory);
 
